@@ -1,7 +1,10 @@
-import React from "react";
-
+import Inscription from "./Inscription/Inscription";
 const App = () => {
-  return <div className="text-2xl text-blue-600 font-bold">Hello</div>
+  return (
+    <div>
+      <Inscription />
+    </div>
+  )
 };
 
 export default App;
