@@ -1,8 +1,10 @@
-import Inscription from "./Inscription/Inscription";
+// import Inscription from "./Inscription/Inscription";
+import Verification from "./Verification/Verification";
 const App = () => {
   return (
     <div>
-      <Inscription />
+      {/* <Inscription /> */}
+      <Verification />
     </div>
   )
 };

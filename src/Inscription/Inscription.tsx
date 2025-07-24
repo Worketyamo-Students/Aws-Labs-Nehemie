@@ -1,6 +1,8 @@
 import Entete from "./Entete/Entete";
 import Input from "./Input/Input";
 import Button from "./Button/Button";
+import Connect from "./Connect/Connect";
+import Police from "./Police/Police";
 
 const Inscription = () => {
   return (
@@ -16,7 +18,13 @@ const Inscription = () => {
             <Progression color="bg-[#D9D9D9]" />
             <Progression color="bg-[#D9D9D9]" /> 
         </div>  */}
+        <Connect image="/src//assets/github-logo.svg" text="Github"/>
+        <Connect image="/src/assets/Google.svg" text="Google" />
         <Button text="Creer le compte" />
+        <Police  text1="By clicking continue, you agree to our  " link1="#" text2="Terms of Service   " 
+              text3="    and" 
+              link2="#" text4="    Privacy Policy."/> 
+           
       </div>
   );
 };
