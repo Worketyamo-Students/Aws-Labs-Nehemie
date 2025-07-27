@@ -4,7 +4,7 @@ import Option from "./Option/Option";
 import Button from "./Button/Button";
 import Connect from "./Connect/Connect";
 import Police from "./Police/Police";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import FooterLoaging from "../FooterLoaging/FooterLoaging";
 
 const Inscription = () => {
   return (
@@ -36,7 +36,7 @@ const Inscription = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <ProgressBar currentStep={0} />
+      <FooterLoaging />
     </div>
   );
 };

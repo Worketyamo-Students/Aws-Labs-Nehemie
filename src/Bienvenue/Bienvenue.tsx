@@ -1,7 +1,7 @@
 import Entete from "./Entete/Entete";
 import Button from "../Inscription/Button/Button";
 import Police from "../Inscription/Police/Police";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import FooterLoaging from "../FooterLoaging/FooterLoaging";
 
 const Bienvenue = () => {
   return (
@@ -21,7 +21,7 @@ const Bienvenue = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <ProgressBar currentStep={3} />
+      <FooterLoaging />
     </div>
   );
 };

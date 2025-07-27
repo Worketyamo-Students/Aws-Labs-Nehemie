@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import Prisma from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
-const prisma = new Prisma.PrismaClient();
+const prisma = new PrismaClient();
 
 export const verifyotp = async (req: Request, res: Response) => {
     const { email, otp } = req.body;

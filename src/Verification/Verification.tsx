@@ -2,7 +2,7 @@ import Entete from "../Verification/Entete/Entete";
 import OTP from "./OTP/OTP";
 import Button from "../Inscription/Button/Button";
 import Police from "../Inscription/Police/Police";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import FooterLoaging from "../FooterLoaging/FooterLoaging";
 
 const Verification = () => {
   return (
@@ -23,7 +23,7 @@ const Verification = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <ProgressBar currentStep={1} />
+      <FooterLoaging />
     </div>
   );
 };

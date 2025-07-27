@@ -2,7 +2,7 @@ import Entete from "./Entete/Entete";
 import Input from "./Input/Input";
 import Button from "../Inscription/Button/Button";
 import Police from "../Inscription/Police/Police";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import FooterLoaging from "../FooterLoaging/FooterLoaging";
 
 const Finalisation = () => {
   return (
@@ -26,7 +26,7 @@ const Finalisation = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <ProgressBar currentStep={2} />
+      <FooterLoaging />
     </div>
   );
 };

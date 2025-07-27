@@ -1,10 +1,10 @@
 import { generateOTP } from "../utils/generateOTP";
 import { Request, Response } from "express";
-import Prisma from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const prisma = new Prisma.PrismaClient();
+const prisma = new PrismaClient();
 
 const JWT_SECRET = process.env.JWT_SECRET || "my_secret";
 
