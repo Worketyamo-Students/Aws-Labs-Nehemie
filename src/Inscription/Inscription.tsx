@@ -4,7 +4,7 @@ import Option from "./Option/Option";
 import Button from "./Button/Button";
 import Connect from "./Connect/Connect";
 import Police from "./Police/Police";
-import FooterLoaging from "../FooterLoaging/FooterLoaging";
+import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 
 const Inscription = () => {
   return (
@@ -36,7 +36,7 @@ const Inscription = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <FooterLoaging />
+      <ProgressionFooter currentStep={0} />
     </div>
   );
 };

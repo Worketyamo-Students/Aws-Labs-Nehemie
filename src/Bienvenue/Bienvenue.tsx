@@ -1,7 +1,7 @@
 import Entete from "./Entete/Entete";
 import Button from "../Inscription/Button/Button";
 import Police from "../Inscription/Police/Police";
-import FooterLoaging from "../FooterLoaging/FooterLoaging";
+import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 
 const Bienvenue = () => {
   return (
@@ -21,7 +21,7 @@ const Bienvenue = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <FooterLoaging />
+      <ProgressionFooter currentStep={3} />
     </div>
   );
 };
