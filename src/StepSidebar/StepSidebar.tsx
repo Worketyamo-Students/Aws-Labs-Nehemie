@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 interface Props {
   image: string;
@@ -9,10 +9,12 @@ interface Props {
 }
 
 export function StepSidebar({ image, label, text, path, children }: Props) {
+    const location = useLocation();
+    const isActive = location.pathname === path;
   return (
     <>
       <NavLink to={path}>
-        <div className="flex gap-3 items-center cursor-pointer">
+      <div className={`flex gap-3 items-center cursor-pointer ${isActive ? 'opacity-100' : 'opacity-50'}`}>
           <div className="border-1 border-gray-300 bg-white rounded-2xl h-[50px] w-[59px] flex justify-center items-center">
             <img src={image} alt={label} className="h-[32px] w-[25px]" />
           </div>
@@ -24,5 +26,5 @@ export function StepSidebar({ image, label, text, path, children }: Props) {
       </NavLink>
       {children}
     </>
-  );
+  );     
 }
