@@ -1,16 +1,28 @@
-import { Logo } from "./Logo/Logo"
+import { NavLink } from "react-router-dom";
 
-export function StepSidebar() {
-    return (
-        <div className="flex flex-col my-[2rem] mx-[2rem] bg-[#FAFAFA]">
-            <Logo link="/src//assets//logo-worketyamo.svg" />
-            <div className="flex justify-between items-center w-full">
-                <div className="flex gap-2 items-center">
-                    <img src="/src//assets//fleche.svg" alt="fleche" />
-                    <p className="text-[1.5rem] text-[#00539C] font-medium">Vos details</p>
-                </div>
-                <a href="/" className="text-[1.3rem] text-[#00539C] font-medium">SignIn</a>
-            </div>
+interface Props {
+  image: string;
+  label: string;
+  text: string;
+  path: string;
+  children?: React.ReactNode;
+}
+
+export function StepSidebar({ image, label, text, path, children }: Props) {
+  return (
+    <>
+      <NavLink to={path}>
+        <div className="flex gap-3 items-center cursor-pointer">
+          <div className="border-1 border-gray-300 bg-white rounded-2xl h-[50px] w-[59px] flex justify-center items-center">
+            <img src={image} alt={label} className="h-[32px] w-[25px]" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h3 className="">{label}</h3>
+            <p className="">{text}</p>
+          </div>
         </div>
-    )
+      </NavLink>
+      {children}
+    </>
+  );
 }
