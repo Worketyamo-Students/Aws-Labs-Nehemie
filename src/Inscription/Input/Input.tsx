@@ -3,6 +3,8 @@ interface Props {
     type?: string;
     placeholder?: string;
     required?: boolean;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Input: React.FC<Props> = ({ label, type, placeholder, required}) => {
