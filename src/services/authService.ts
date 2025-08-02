@@ -7,3 +7,10 @@ export const registeUser  = async (data: {
 }) => {
     return await API.post("auth/register", data); 
 }
+
+export const verifyotp = async (data: {
+    email: string, 
+    otp: string
+}) => {
+    return await API.post("auth/verify-otp", data);
+}

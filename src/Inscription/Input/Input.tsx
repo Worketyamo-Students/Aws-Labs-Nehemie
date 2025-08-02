@@ -18,7 +18,6 @@ const Input: React.FC<Props> = ({ label, type, placeholder, required, value, onC
                 required={required}
                 value={value}
                 onChange={onChange}
-
             />
         </div>
     )

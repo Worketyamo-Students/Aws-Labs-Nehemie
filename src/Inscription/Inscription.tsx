@@ -9,7 +9,7 @@ import { useState } from "react";
 import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 import { registeUser } from "../services/authService";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import type { AxiosError } from "axios";
 
 const Inscription = () => {
@@ -24,6 +24,7 @@ const Inscription = () => {
     try {
       const response = await registeUser({ email, password, name });
       console.log("Succès:", response.data);
+      localStorage.setItem("email", email);
       navigate("/verification");
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
@@ -82,8 +83,16 @@ const Inscription = () => {
           {error && <p className="text-red-500">{error}</p>}
 
           <Option />
-          <Connect image="/src//assets/github-logo.svg" text="Github" />
-          <Connect image="/src/assets/Google.svg" text="Google" />
+          <Connect 
+            image="/src//assets/github-logo.svg" 
+            text="Github" 
+            onClick={() => window.location.href = 'http://localhost:5000/api/auth/github'}
+          />
+          <Connect 
+            image="/src/assets/Google.svg" 
+            text="Google" 
+            onClick={() => window.location.href = 'http://localhost:5000/api/auth/google'}
+          />
           <Button text="Creer le compte" type="submit" />
         </Form>
 
