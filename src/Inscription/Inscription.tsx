@@ -5,36 +5,58 @@ import Button from "./Button/Button";
 import Connect from "./Connect/Connect";
 import Police from "./Police/Police";
 import Form from "./Form/Form";
+import { useState } from "react";
 import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 import { registeUser } from "../services/authService";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-
+import axios from "axios";
+import type { AxiosError } from "axios";
 
 const Inscription = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
-
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await registeUser({ email, password });
+      const response = await registeUser({ email, password, name });
       console.log("Succès:", response.data);
       navigate("/verification");
-    } catch (error) {
-      console.error("Erreur:", error);
-      setError("Une erreur s'est produite lors de l'inscription.");
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        const axiosError = error as AxiosError;
+        console.error("Erreur Axios:", axiosError);
+        setError(
+          (axiosError.response?.data as { message: string })?.message ||
+            "Erreur Axios"
+        );
+      } else if (error instanceof Error) {
+        console.error("Erreur JS:", error.message);
+        setError(error.message);
+      } else {
+        setError("Erreur inconnue");
+      }
     }
-  }
+  };
 
   return (
     <>
       <div className="pt-[6rem] pb-[3rem] px-[1.5rem]">
         <Entete />
         <Form onSubmit={handleSubmit}>
+          <Input
+            label="Nom"
+            type="text"
+            placeholder="Entrer le nom"
+            required
+            value={name}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setName(e.target.value)
+            }
+          /> 
           <Input
             label="Email"
             type="text"
@@ -45,6 +67,7 @@ const Inscription = () => {
               setEmail(e.target.value)
             }
           />
+
           <Input
             label="Mot de passe"
             type="password"
@@ -58,12 +81,12 @@ const Inscription = () => {
 
           {error && <p className="text-red-500">{error}</p>}
 
+          <Option />
+          <Connect image="/src//assets/github-logo.svg" text="Github" />
+          <Connect image="/src/assets/Google.svg" text="Google" />
+          <Button text="Creer le compte" type="submit" />
         </Form>
-        <Option />
-        <Connect image="/src//assets/github-logo.svg" text="Github" />
-        <Connect image="/src/assets/Google.svg" text="Google" />
-        <Button text="Creer le compte" 
-        />
+
         <Police
           text1="By clicking continue, you agree to our  "
           link1="#"
@@ -77,6 +100,5 @@ const Inscription = () => {
     </>
   );
 };
-
 
 export default Inscription;

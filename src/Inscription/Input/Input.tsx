@@ -7,7 +7,7 @@ interface Props {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Input: React.FC<Props> = ({ label, type, placeholder, required}) => {
+const Input: React.FC<Props> = ({ label, type, placeholder, required, value, onChange}) => {
     return (
         <div className="flex flex-col gap-1 pt-3">
             <label htmlFor={label} className="font-medium text-[1rem] text-[#09090B]">{label}</label>
@@ -16,6 +16,9 @@ const Input: React.FC<Props> = ({ label, type, placeholder, required}) => {
                 type={type} 
                 placeholder={placeholder}
                 required={required}
+                value={value}
+                onChange={onChange}
+
             />
         </div>
     )
