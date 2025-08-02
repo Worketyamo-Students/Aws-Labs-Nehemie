@@ -1,5 +1,16 @@
 import ProgressBar from "../ProgressBar/ProgressBar";
 
+interface Props {
+    currentStep: number
+}
+
+const stepPaths = [
+    "/",
+    "/Verification",
+    "/Finalisation",
+    "/Bienvenue",
+]
+
 const stepColors = [
   "bg-[#FFA273] opacity-60", 
   "bg-[#FFA273]",
@@ -7,17 +18,20 @@ const stepColors = [
   "bg-[#00539C]", 
 ];
 
-const ProgressionFooter = ({ currentStep = 0}: { currentStep: number }) => {
+
+
+const ProgressionFooter = ({ currentStep = 0}: Props) => {
     return (
         <div className="flex gap-2 items-center w-full pt-[3rem]">
             {stepColors.map((color, index) => {
-                if (index < currentStep) {
-                    return <ProgressBar key={index} color={color} />;
-                } else if (index === currentStep) {
-                    return <ProgressBar key={index} color={color} />;
-                } else {
-                    return <ProgressBar key={index} color="bg-[#D9D9D9]" />;
-                }
+                const appliedColor = 
+                    index < currentStep ? color :
+                    index === currentStep ? color :
+                    "bg-[#D9D9D9] opacity-60";
+
+                return (
+                    <ProgressBar key={index} color={appliedColor} path={stepPaths[index]}/>
+                )
             })}
         </div>
     )

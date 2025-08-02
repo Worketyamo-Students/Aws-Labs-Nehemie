@@ -3,7 +3,7 @@ import Button from "../Inscription/Button/Button";
 import Police from "../Inscription/Police/Police";
 import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
 
 const Bienvenue = () => {
   return (

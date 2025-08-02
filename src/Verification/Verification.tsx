@@ -9,10 +9,10 @@ const Verification = () => {
     <div className="pt-[8rem] pb-[3rem] px-[1.5rem]">
       <Entete />
       <div className="flex items-center gap-3 my-[2rem]">
-        <OTP type="number" value="#" />
-        <OTP type="number" value="#" />
-        <OTP type="number" value="#" />
-        <OTP type="number" value="#" />
+        <OTP type="number" value="" />
+        <OTP type="number" value="" />
+        <OTP type="number" value="" />
+        <OTP type="number" value="" />
       </div>
       <Button text="Creer le compte" />
       <Police

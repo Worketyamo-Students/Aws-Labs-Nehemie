@@ -4,42 +4,46 @@ import Option from "./Option/Option";
 import Button from "./Button/Button";
 import Connect from "./Connect/Connect";
 import Police from "./Police/Police";
+import Form from "./Form/Form";
 import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 import { registeUser } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
+
 const Inscription = () => {
-  const  [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleRegister = async () => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
-      const response = await registeUser(email, password);
+      const response = await registeUser({ email, password });
       console.log("Succès:", response.data);
-      navigate("/verification"); 
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        console.error("Erreur:", err.message || "Erreur inconnue");
-      } else {
-        console.error("Erreur inconnue:", err);
-      }
+      navigate("/verification");
+    } catch (error) {
+      console.error("Erreur:", error);
+      setError("Une erreur s'est produite lors de l'inscription.");
     }
-  };
-    return (
+  }
+
+  return (
     <>
       <div className="pt-[6rem] pb-[3rem] px-[1.5rem]">
         <Entete />
-        <div className="flex flex-col gap-2 pt-4">
+        <Form onSubmit={handleSubmit}>
           <Input
             label="Email"
             type="text"
             placeholder="abc@example.com"
             required
             value={email}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setEmail(e.target.value)
+            }
           />
           <Input
             label="Mot de passe"
@@ -47,13 +51,19 @@ const Inscription = () => {
             placeholder="**************"
             required
             value={password}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setPassword(e.target.value)
+            }
           />
-        </div>
+
+          {error && <p className="text-red-500">{error}</p>}
+
+        </Form>
         <Option />
         <Connect image="/src//assets/github-logo.svg" text="Github" />
         <Connect image="/src/assets/Google.svg" text="Google" />
-        <Button text="Creer le compte" onClick={handleRegister} />
+        <Button text="Creer le compte" 
+        />
         <Police
           text1="By clicking continue, you agree to our  "
           link1="#"
@@ -67,5 +77,6 @@ const Inscription = () => {
     </>
   );
 };
+
 
 export default Inscription;

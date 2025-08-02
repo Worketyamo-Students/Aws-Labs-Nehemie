@@ -1,11 +1,14 @@
 import { NavLink, useLocation } from "react-router-dom";
+{/* "Navlink" : un composant React Router qui permet de créer un lien de navigation avec des classes conditionnelles automatiques selon l'URL active.
+    "useLocation" : hook de React Router qui retourne l’objet location (chemin actuel, hash, etc.). Il est utilisé ici pour savoir quelle page est active.
+*/}
 
 interface Props {
   image: string;
   label: string;
   text: string;
   path: string;
-  children?: React.ReactNode;
+  children?: React.ReactNode; // pour ajouter éventuellement un composant enfant (comme TimeLine)
 }
 
 export function StepSidebar({ image, label, text, path, children }: Props) {

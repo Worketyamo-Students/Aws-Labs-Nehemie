@@ -5,9 +5,9 @@ const Side = () => {
     return (
         <div className="flex flex-col items-baseline w-[30%] px-20  gap-20 pt-[28px] h-[100%] bg-[#00539C0A] my-[2rem] mx-[2rem]">
             <img
-                src="/src/assets/Icon-worketyamo.svg"
+                src="/src/assets/logo-worketyamo.svg"
                 alt="Worketyamo"
-                className="w-[100px] h-[100px]"
+                className="w-[15rem] h-[15rem]"
             />
             <div>
                 <StepSidebar
@@ -16,7 +16,7 @@ const Side = () => {
                     label="Inscription"
                     text="Entrez vos informations personnelles."
                 >
-                    <TimeLine path="/verification" />
+                    {/* <TimeLine path="/verification" /> */}
                 </StepSidebar>
 
                 <StepSidebar
@@ -25,7 +25,7 @@ const Side = () => {
                     label="Validation OTP"
                     text="Confirmez votre adresse e-mail."
                 >
-                    <TimeLine path="/finalisation" />
+                    {/* <TimeLine path="/finalisation" /> */}
                 </StepSidebar>
 
                 <StepSidebar
@@ -34,7 +34,7 @@ const Side = () => {
                     label="Invitez vos amis"
                     text="Envoyez des invitations à vos amis."
                 >
-                    <TimeLine path="/bienvenue" />
+                    {/* <TimeLine path="/bienvenue" /> */}
                 </StepSidebar>
 
                 <StepSidebar
@@ -43,6 +43,8 @@ const Side = () => {
                     label="Bienvenue à Worketyamo"
                     text="Votre inscription est terminée."
                 ></StepSidebar>
+
+                <TimeLine path="/Bienvenue" />
             </div>
         </div>
     );
