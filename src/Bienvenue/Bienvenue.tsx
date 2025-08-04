@@ -7,12 +7,12 @@ import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 
 const Bienvenue = () => {
   return (
-    <div className="pt-[6rem] pb-[3rem] px-[1.5rem]">
+    <div className="pt-[3rem] pb-[2rem] px-[1.5rem] lg:px-[30%]">
       <Entete />
       <img
         src="/src/assets/Bienvenu.svg"
         alt="Acceuil"
-        className="w-full my-[2rem]"
+        className="w-full my-[2rem] lg:h-[20rem]"
       />
       <Button text="Creer le compte" />
       <Police

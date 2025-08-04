@@ -1,7 +1,8 @@
 import ProgressBar from "../ProgressBar/ProgressBar";
 
 interface Props {
-    currentStep: number
+    currentStep: number;
+    padding?: string 
 }
 
 const stepPaths = [
@@ -20,9 +21,9 @@ const stepColors = [
 
 
 
-const ProgressionFooter = ({ currentStep = 0}: Props) => {
+const ProgressionFooter = ({ currentStep = 0, padding} : Props) => {
     return (
-        <div className="flex gap-2 items-center w-full pt-[3rem]">
+        <div className={`flex gap-2 items-center w-full pt-[3rem] ${padding}`}>
             {stepColors.map((color, index) => {
                 const appliedColor = 
                     index < currentStep ? color :

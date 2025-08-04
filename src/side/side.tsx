@@ -3,13 +3,13 @@ import TimeLine from "../TimeLine/Timeline";
 
 const Side = () => {
     return (
-        <div className="flex flex-col items-baseline w-[30%] px-20  gap-20 pt-[28px] h-[100%] bg-[#00539C0A] my-[2rem] mx-[2rem]">
+        <div className="flex flex-col w-[40%] h-[100%] px-20 bg-[#00539C0A] ">
             <img
-                src="/src/assets/logo-worketyamo.svg"
+                src="/src/assets/worketyamo.svg"
                 alt="Worketyamo"
                 className="w-[15rem] h-[15rem]"
             />
-            <div>
+            <div className="flex flex-col gap-[3rem]">
                 <StepSidebar
                     path="/"
                     image="/src/assets/Person.svg"

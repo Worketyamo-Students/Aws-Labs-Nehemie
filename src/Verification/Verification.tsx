@@ -45,7 +45,7 @@ const Verification = () => {
     }
   }
   return (
-    <div className="pt-[8rem] pb-[3rem] px-[1.5rem]">
+  <div className="pt-[3rem] pb-[2rem] px-[1.5rem] lg:px-[30%]">
       <Entete />
       <div className="flex items-center gap-3 my-[2rem]">
         {otp.map((digit, index) => (
@@ -72,7 +72,7 @@ const Verification = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <ProgressionFooter currentStep={1} />
+      <ProgressionFooter currentStep={1} padding="pt-[16rem]"/>
     </div>
   );
 };

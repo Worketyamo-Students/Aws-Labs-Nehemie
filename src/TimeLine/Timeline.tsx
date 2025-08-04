@@ -12,11 +12,11 @@ const TimeLine = ({ path }: prop) => {
     window.history.back();
   }
   return (
-    <div className="flex justify-between w-full text-[#00539C] pt-65 ">
-      <div onClick={handleNavigation} className="flex gap-4">
-        <img src="/arrow.svg" alt="" /> Vos details
+    <div className="flex justify-between w-full text-[#00539C] pt-[5.5rem] ">
+      <div onClick={handleNavigation} className="flex gap-4 cursor-pointer">
+        <img src="/src/assets/fleche.svg" alt="" /> Vos details
       </div>
-      <Link to={path}>sign Up</Link>
+      <Link to={path}>signIn</Link>
     </div>
   );
 };

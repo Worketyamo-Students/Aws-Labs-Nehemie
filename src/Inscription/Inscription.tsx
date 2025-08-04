@@ -45,7 +45,7 @@ const Inscription = () => {
 
   return (
     <>
-      <div className="pt-[6rem] pb-[3rem] px-[1.5rem]">
+      <div className="pt-[3rem] pb-[2rem] px-[1.5rem] lg:px-[30%]">
         <Entete />
         <Form onSubmit={handleSubmit}>
           <Input

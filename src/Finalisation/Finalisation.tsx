@@ -6,7 +6,7 @@ import ProgressionFooter from "../ProgressionFooter/ProgressionFooter";
 
 const Finalisation = () => {
   return (
-    <div className="pt-[6rem] pb-[3rem] px-[1.5rem]">
+    <div className="pt-[3rem] pb-[2rem] px-[1.5rem] lg:px-[30%]">
       <Entete />
       <div className="flex flex-col gap-2 mt-6">
         <h3 className="text-[#09090B] text-[1.2rem] font-medium">
@@ -26,7 +26,7 @@ const Finalisation = () => {
         link2="#"
         text4="    Privacy Policy."
       />
-      <ProgressionFooter currentStep={1} />
+      <ProgressionFooter currentStep={2} />
     </div>
   );
 };
